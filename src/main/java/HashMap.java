@@ -20,17 +20,23 @@ public class HashMap <K,V>{
      typeArray = (V[]) new Object[size];
     }
 
-    public boolean put (K k , V v)
+    public void put (K k , V v)
     {
         keyArray [length] = k;
         typeArray [length] = v;
         length++;
-
+        resize(length,size,keyArray,typeArray);
     }
 
     private void resize (int length , int size , K[] key,V[] value)
     {
-        
-
+        if (length==size) {
+            keyArray = (K[]) new Object[size * 2];
+            typeArray = (V[]) new Object[size * 2];
+            for (int i = 0; i < size; i++) {
+                keyArray[i] = key[i];
+                typeArray[i]= value[i];
+            }
+        }
     }
 }
