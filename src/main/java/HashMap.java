@@ -39,4 +39,12 @@ public class HashMap <K,V>{
             }
         }
     }
+    public boolean SpecialKey (K k)
+    {
+        for (int i = 0; i < length; i++) {
+            if (keyArray[i].equals(k))
+                return true;
+        }
+        return false;
+    }
 }
