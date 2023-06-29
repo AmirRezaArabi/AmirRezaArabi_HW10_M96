@@ -60,4 +60,10 @@ public class HashMap <K,V>{
             return typeArray[trueIndex];
 
     }
+    public boolean isEmpty (){
+        for (int i = 0; i < length; i++)
+            if (keyArray[i]!=null||typeArray[i]!=null)
+                return false;
+            return true;
+    }
 }
