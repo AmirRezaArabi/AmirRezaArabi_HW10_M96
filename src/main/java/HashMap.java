@@ -47,4 +47,17 @@ public class HashMap <K,V>{
         }
         return false;
     }
+
+    public V get (K k){
+        int trueIndex = length+1 ;
+        for (int i = 0; i < length; i++) {
+            if (keyArray[i].equals(k))
+                trueIndex=i;
+        }
+        if (trueIndex==length+1)
+            return null;
+        else
+            return typeArray[trueIndex];
+
+    }
 }
